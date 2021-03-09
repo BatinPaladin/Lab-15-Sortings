@@ -22,7 +22,7 @@ int ReadFile(Countries list[], ifstream& file){
 }
 void WriteList(Countries list[], int N) {
 	for (int i = 0; i < N; i++) {
-		cout << "\nÍàçâàíèå ñòðàíû: " << list[i].name << "\n×èñëåííîñòü íàñåëåíèÿ: " << list[i].population << endl;
+		cout << "\nÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ñ‹: " << list[i].name << "\nÐ§Ð¸ÑÐ»ÐµÐ½Ð½Ð¾ÑÑ‚ÑŒ Ð½Ð°ÑÐµÐ»ÐµÐ½Ð¸Ñ: " << list[i].population << endl;
 	}
 }
 void ShellSort(Countries list[], int N) {
@@ -78,31 +78,31 @@ void HoaraSort(Countries list[], int left, int right) {
 };
 void SwitchSortingMethod(Countries list[], int N) {
 	int MethodNumber = -1;
-	string otvet = "Äà";
-	while (otvet != "Íåò") {
-		cout << "\nÂâåäèòå íîìåð ìåòîäà áûñòðîé ñîðòèðîâêè\n\n0 - ìåòîä ñîðòèðîâêè Øåëëà\n1 - ìåòîä ñîðòèðîâêè Õîàðà\n\nÂàø âûáîð: ";
+	string otvet = "Ð”Ð°";
+	while (otvet != "ÐÐµÑ‚") {
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¼ÐµÑ‚Ð¾Ð´Ð° Ð±Ñ‹ÑÑ‚Ñ€Ð¾Ð¹ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸\n\n0 - Ð¼ÐµÑ‚Ð¾Ð´ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð¨ÐµÐ»Ð»Ð°\n1 - Ð¼ÐµÑ‚Ð¾Ð´ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð¥Ð¾Ð°Ñ€Ð°\n\nÐ’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
 		cin >> MethodNumber;
 		switch (MethodNumber) {
 		case (0):
 			ShellSort(list, N);
-			cout << "\nÌíîæåñòâî îòñîðòèðîâàííîå ìåòîäîì Øåëëà\n";
+			cout << "\nÐœÐ½Ð¾Ð¶ÐµÑÑ‚Ð²Ð¾ Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð¼ Ð¨ÐµÐ»Ð»Ð°\n";
 			WriteList(list, N);
 			break;
 		case (1):
 			HoaraSort(list,0,N-1);
-			cout << "\nÌíîæåñòâî îòñîðòèðîâàííîå ìåòîäîì Õîàðà\n";
+			cout << "\nÐœÐ½Ð¾Ð¶ÐµÑÑ‚Ð²Ð¾ Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð¼ Ð¥Ð¾Ð°Ñ€Ð°\n";
 			WriteList(list, N);
 			break;
-		default: cout << "\nÂâåä¸í íå íîìåð ìåòîäà ïîèñêà!\n";
+		default: cout << "\nÐ’Ð²ÐµÐ´Ñ‘Ð½ Ð½Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¼ÐµÑ‚Ð¾Ð´Ð° Ð¿Ð¾Ð¸ÑÐºÐ°!\n";
 			break;
 		}
-		cout << "\nÕîòèòå ïðîäîëæèòü ðàáîòó ïðîãðàììû? (Äà/Íåò)\n\nÂàø îòâåò: ";
+		cout << "\nÐ¥Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹? (Ð”Ð°/ÐÐµÑ‚)\n\nÐ’Ð°Ñˆ Ð¾Ñ‚Ð²ÐµÑ‚: ";
 		cin >> otvet;
 	}
 };
 void RecordFile(Countries list[], ofstream& file, int N) {
 	for (int i = 0; i < N; i++) {
-		file << "Íàçâàíèå ñòðàíû: " << list[i].name << "\n×èñëåííîñòü íàñåëåíèÿ: " << list[i].population << "\n\n";
+		file << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ñ€Ð°Ð½Ñ‹: " << list[i].name << "\nÐ§Ð¸ÑÐ»ÐµÐ½Ð½Ð¾ÑÑ‚ÑŒ Ð½Ð°ÑÐµÐ»ÐµÐ½Ð¸Ñ: " << list[i].population << "\n\n";
 	}
 };
 int main() 
@@ -112,7 +112,7 @@ int main()
 	if (inputfile.is_open()) {
 		Countries list[100];
 		int quantity = ReadFile(list, inputfile);
-		cout << "\nÊîë-âî ýëåìíòîâ â ìíîæåñòâå = " << quantity << "\n\nÌíîæåñòâî\n";
+		cout << "\nÐšÐ¾Ð»-Ð²Ð¾ ÑÐ»ÐµÐ¼Ð½Ñ‚Ð¾Ð² Ð² Ð¼Ð½Ð¾Ð¶ÐµÑÑ‚Ð²Ðµ = " << quantity << "\n\nÐœÐ½Ð¾Ð¶ÐµÑÑ‚Ð²Ð¾\n";
 		inputfile.close();
 		WriteList(list,quantity);
 		SwitchSortingMethod(list,quantity);
@@ -121,7 +121,7 @@ int main()
 		outputfile.close();
 	}
 	else {
-		cout << "Îøèáêà! Íå óäàëîñü îòêûòü ôàéë F1.txt\n";
+		cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» F1.txt\n";
 	}
 	system("pause");
 }
